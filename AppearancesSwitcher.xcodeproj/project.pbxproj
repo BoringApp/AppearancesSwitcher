@@ -11,7 +11,36 @@
 		877A567022DCE36100396936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877A566F22DCE36100396936 /* Assets.xcassets */; };
 		877A567D22DCE39100396936 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A567B22DCE39000396936 /* ViewController.swift */; };
 		877A567E22DCE39100396936 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A567C22DCE39100396936 /* main.swift */; };
+		877A569C22DCE49C00396936 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877A569B22DCE49C00396936 /* NotificationCenter.framework */; };
+		877A569F22DCE49C00396936 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A569E22DCE49C00396936 /* TodayViewController.swift */; };
+		877A56A222DCE49C00396936 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877A56A022DCE49C00396936 /* TodayViewController.xib */; };
+		877A56A622DCE49C00396936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 877A56A422DCE49C00396936 /* InfoPlist.strings */; };
+		877A56AA22DCE49C00396936 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 877A569922DCE49C00396936 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		877A56A822DCE49C00396936 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 877A566222DCE35F00396936 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 877A569822DCE49C00396936;
+			remoteInfo = Today;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		877A56AE22DCE49C00396936 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				877A56AA22DCE49C00396936 /* Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		877A566A22DCE35F00396936 /* AppearancesSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppearancesSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +50,13 @@
 		877A567522DCE36100396936 /* AppearancesSwitcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppearancesSwitcher.entitlements; sourceTree = "<group>"; };
 		877A567B22DCE39000396936 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		877A567C22DCE39100396936 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		877A569922DCE49C00396936 /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		877A569B22DCE49C00396936 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		877A569E22DCE49C00396936 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		877A56A122DCE49C00396936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		877A56A322DCE49C00396936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		877A56A522DCE49C00396936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		877A56A722DCE49C00396936 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Today.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		877A569622DCE49C00396936 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877A569C22DCE49C00396936 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				877A566C22DCE35F00396936 /* AppearancesSwitcher */,
+				877A569D22DCE49C00396936 /* Today */,
+				877A569A22DCE49C00396936 /* Frameworks */,
 				877A566B22DCE35F00396936 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				877A566A22DCE35F00396936 /* AppearancesSwitcher.app */,
+				877A569922DCE49C00396936 /* Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +110,26 @@
 			path = AppearancesSwitcher;
 			sourceTree = "<group>";
 		};
+		877A569A22DCE49C00396936 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				877A569B22DCE49C00396936 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		877A569D22DCE49C00396936 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				877A569E22DCE49C00396936 /* TodayViewController.swift */,
+				877A56A022DCE49C00396936 /* TodayViewController.xib */,
+				877A56A322DCE49C00396936 /* Info.plist */,
+				877A56A422DCE49C00396936 /* InfoPlist.strings */,
+				877A56A722DCE49C00396936 /* Today.entitlements */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -73,15 +140,34 @@
 				877A566622DCE35F00396936 /* Sources */,
 				877A566722DCE35F00396936 /* Frameworks */,
 				877A566822DCE35F00396936 /* Resources */,
+				877A56AE22DCE49C00396936 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				877A56A922DCE49C00396936 /* PBXTargetDependency */,
 			);
 			name = AppearancesSwitcher;
 			productName = AppearancesSwitcher;
 			productReference = 877A566A22DCE35F00396936 /* AppearancesSwitcher.app */;
 			productType = "com.apple.product-type.application";
+		};
+		877A569822DCE49C00396936 /* Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 877A56AB22DCE49C00396936 /* Build configuration list for PBXNativeTarget "Today" */;
+			buildPhases = (
+				877A569522DCE49C00396936 /* Sources */,
+				877A569622DCE49C00396936 /* Frameworks */,
+				877A569722DCE49C00396936 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Today;
+			productName = Today;
+			productReference = 877A569922DCE49C00396936 /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +180,9 @@
 				ORGANIZATIONNAME = GMWorkStudio;
 				TargetAttributes = {
 					877A566922DCE35F00396936 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					877A569822DCE49C00396936 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -112,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				877A566922DCE35F00396936 /* AppearancesSwitcher */,
+				877A569822DCE49C00396936 /* Today */,
 			);
 		};
 /* End PBXProject section */
@@ -122,6 +212,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				877A567022DCE36100396936 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877A569722DCE49C00396936 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877A56A222DCE49C00396936 /* TodayViewController.xib in Resources */,
+				877A56A622DCE49C00396936 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +237,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		877A569522DCE49C00396936 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877A569F22DCE49C00396936 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		877A56A922DCE49C00396936 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 877A569822DCE49C00396936 /* Today */;
+			targetProxy = 877A56A822DCE49C00396936 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		877A56A022DCE49C00396936 /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				877A56A122DCE49C00396936 /* Base */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
+		877A56A422DCE49C00396936 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				877A56A522DCE49C00396936 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		877A567622DCE36100396936 /* Debug */ = {
@@ -259,6 +393,7 @@
 		877A567922DCE36100396936 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppearancesSwitcher/AppearancesSwitcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -270,7 +405,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearanceSwitcher.AppearancesSwitcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -279,6 +414,7 @@
 		877A567A22DCE36100396936 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppearancesSwitcher/AppearancesSwitcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,8 +426,50 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearanceSwitcher.AppearancesSwitcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		877A56AC22DCE49C00396936 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 53QLTPPT52;
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		877A56AD22DCE49C00396936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 53QLTPPT52;
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -313,6 +491,15 @@
 			buildConfigurations = (
 				877A567922DCE36100396936 /* Debug */,
 				877A567A22DCE36100396936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		877A56AB22DCE49C00396936 /* Build configuration list for PBXNativeTarget "Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				877A56AC22DCE49C00396936 /* Debug */,
+				877A56AD22DCE49C00396936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
