@@ -10,26 +10,47 @@ import Cocoa
 import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
-    let lightButton = NSButton(title: "Light", target: self, action: #selector(TodayViewController.lightButtonClicked))
-    let darkButton = NSButton(title: "Dark", target: self, action: nil)
-    var containerStackView: NSStackView?
+    let lightButton:NSButton = {
+        var tintImage = NSImage(size: NSMakeSize(70, 48))
+        tintImage = tintImage.tint(color: NSColor.blue)
+        let button = NSButton(title: "Light", image: tintImage, target: self, action: #selector(TodayViewController.lightButtonClicked))
+        button.imagePosition = NSControl.ImagePosition.imageAbove
+        button.setButtonType(.toggle)
+//        button.state = NSControl.StateValue.off
+        
+        // NSButtonCell
+        return button
+    }()
     
-    override var nibName: NSNib.Name? {
-        return NSNib.Name("TodayViewController")
+    let darkButton: NSButton = {
+        var tintImage = NSImage(size: NSMakeSize(66, 38))
+        tintImage = tintImage.tint(color: NSColor.red)
+        let button = NSButton(title: "Dark",image: tintImage, target: self, action: nil)
+        return button
+    }()
+    
+    let containerStackView: NSStackView = {
+        let stackView = NSStackView()
+        stackView.alignment = .centerX
+        stackView.orientation = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.setBackground(color: NSColor.yellow)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    override func loadView() {
+        self.view = NSView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.setValue(NSColor.red, forKey: "backgroundColor")
-        
-        self.containerStackView = NSStackView(views: [lightButton, darkButton])
-        self.containerStackView?.alignment = .centerX
-        self.containerStackView?.orientation = .horizontal
-        self.containerStackView?.distribution = .equalSpacing
-        
-        self.containerStackView!.setValue(NSColor.yellow, forKey: "backgroundColor")
-        self.view.addSubview(self.containerStackView!)
+//          (.momentaryPushIn)
+                
+        self.containerStackView.addView(lightButton, in: .center)
+        self.containerStackView.addView(darkButton, in: .center)
+        self.view.addSubview(self.containerStackView)
         
         self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.widthAnchor.constraint(equalToConstant: 320).isActive = true;
@@ -37,10 +58,9 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         
         let margin: CGFloat = 8
         
-        self.containerStackView!.translatesAutoresizingMaskIntoConstraints = false
-        self.containerStackView!.topAnchor.constraint(equalTo: self.view.topAnchor, constant: margin).isActive = true
-        self.containerStackView!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -margin).isActive = true;
-        self.containerStackView?.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.containerStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: margin).isActive = true
+        self.containerStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -margin).isActive = true;
+        self.containerStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         super.updateViewConstraints()
     }
     
