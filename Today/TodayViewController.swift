@@ -18,6 +18,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         button.setButtonType(.toggle)
 //        button.state = NSControl.StateValue.off
         
+        // Change theme
+//        SLSSetAppearanceThemeLegacy(true)
         // NSButtonCell
         return button
     }()

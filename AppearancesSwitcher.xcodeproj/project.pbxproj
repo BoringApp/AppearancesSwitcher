@@ -17,6 +17,7 @@
 		877A56AA22DCE49C00396936 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 877A569922DCE49C00396936 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644C22DDA710003A3282 /* NSViewExtension.swift */; };
 		87BA644F22DDC515003A3282 /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644E22DDC515003A3282 /* NSImageExtension.swift */; };
+		87BA647922DEECE9003A3282 /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BA647822DEECE9003A3282 /* SkyLight.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,8 @@
 		877A56A722DCE49C00396936 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Today.entitlements; sourceTree = "<group>"; };
 		87BA644C22DDA710003A3282 /* NSViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewExtension.swift; sourceTree = "<group>"; };
 		87BA644E22DDC515003A3282 /* NSImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtension.swift; sourceTree = "<group>"; };
-		87BA645222DDD9E1003A3282 /* BridgeHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeaders.h; sourceTree = "<group>"; };
+		87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
+		87BA647822DEECE9003A3282 /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87BA647922DEECE9003A3282 /* SkyLight.framework in Frameworks */,
 				877A569C22DCE49C00396936 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +119,7 @@
 		877A569A22DCE49C00396936 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87BA647822DEECE9003A3282 /* SkyLight.framework */,
 				877A569B22DCE49C00396936 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -124,13 +128,13 @@
 		877A569D22DCE49C00396936 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				877A569E22DCE49C00396936 /* TodayViewController.swift */,
-				87BA644C22DDA710003A3282 /* NSViewExtension.swift */,
-				87BA644E22DDC515003A3282 /* NSImageExtension.swift */,
 				877A56A322DCE49C00396936 /* Info.plist */,
 				877A56A422DCE49C00396936 /* InfoPlist.strings */,
+				87BA644E22DDC515003A3282 /* NSImageExtension.swift */,
+				87BA644C22DDA710003A3282 /* NSViewExtension.swift */,
+				87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */,
 				877A56A722DCE49C00396936 /* Today.entitlements */,
-				87BA645222DDD9E1003A3282 /* BridgeHeaders.h */,
+				877A569E22DCE49C00396936 /* TodayViewController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -405,7 +409,12 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -426,7 +435,12 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Release;
 		};
@@ -447,8 +461,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Today/Today-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -469,8 +487,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Today/Today-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Release;
 		};
