@@ -15,6 +15,7 @@
 		877A569F22DCE49C00396936 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A569E22DCE49C00396936 /* TodayViewController.swift */; };
 		877A56A622DCE49C00396936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 877A56A422DCE49C00396936 /* InfoPlist.strings */; };
 		877A56AA22DCE49C00396936 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 877A569922DCE49C00396936 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8784CE0922DF0ECA009815A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8784CE0822DF0ECA009815A5 /* Assets.xcassets */; };
 		87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644C22DDA710003A3282 /* NSViewExtension.swift */; };
 		87BA644F22DDC515003A3282 /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644E22DDC515003A3282 /* NSImageExtension.swift */; };
 		87BA647922DEECE9003A3282 /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BA647822DEECE9003A3282 /* SkyLight.framework */; };
@@ -58,6 +59,7 @@
 		877A56A322DCE49C00396936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		877A56A522DCE49C00396936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		877A56A722DCE49C00396936 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Today.entitlements; sourceTree = "<group>"; };
+		8784CE0822DF0ECA009815A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87BA644C22DDA710003A3282 /* NSViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewExtension.swift; sourceTree = "<group>"; };
 		87BA644E22DDC515003A3282 /* NSImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtension.swift; sourceTree = "<group>"; };
 		87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -128,15 +130,32 @@
 		877A569D22DCE49C00396936 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				8784CE0A22DF0ED0009815A5 /* Classes */,
 				877A56A322DCE49C00396936 /* Info.plist */,
 				877A56A422DCE49C00396936 /* InfoPlist.strings */,
-				87BA644E22DDC515003A3282 /* NSImageExtension.swift */,
-				87BA644C22DDA710003A3282 /* NSViewExtension.swift */,
 				87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */,
 				877A56A722DCE49C00396936 /* Today.entitlements */,
-				877A569E22DCE49C00396936 /* TodayViewController.swift */,
+				8784CE0822DF0ECA009815A5 /* Assets.xcassets */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		8784CE0A22DF0ED0009815A5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8784CE0B22DF1DD6009815A5 /* Extensions */,
+				877A569E22DCE49C00396936 /* TodayViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8784CE0B22DF1DD6009815A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87BA644E22DDC515003A3282 /* NSImageExtension.swift */,
+				87BA644C22DDA710003A3282 /* NSViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8784CE0922DF0ECA009815A5 /* Assets.xcassets in Resources */,
 				877A56A622DCE49C00396936 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +427,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -433,7 +453,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
@@ -458,7 +478,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher.Today;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Today/Today-Bridging-Header.h";
@@ -484,7 +504,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.AppearancesSwitcher.Today;
+				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Today/Today-Bridging-Header.h";

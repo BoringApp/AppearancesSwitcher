@@ -11,18 +11,37 @@ import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
     let lightButton:NSButton = {
-        var tintImage = NSImage(size: NSMakeSize(70, 48))
-        tintImage = tintImage.tint(color: NSColor.blue)
-        let button = NSButton(title: "Light", image: tintImage, target: nil, action: nil)
+        var button: NSButton
+        if let lightImage = NSImage(named: "button_light") {
+            button = NSButton(title: "Light", image: lightImage, target: nil, action: nil)
+        } else {
+            var tintImage = NSImage(size: NSMakeSize(70, 48))
+            tintImage = tintImage.tint(color: NSColor.blue)
+            button = NSButton(title: "Light", image: tintImage, target: nil, action: nil)
+        }
+        
+        button.isBordered = false
+        button.layer?.backgroundColor = NSColor.clear.cgColor
+        //        button.layer?.cornerRadius = radius
+        button.bezelStyle = NSButton.BezelStyle.regularSquare
         button.imagePosition = NSControl.ImagePosition.imageAbove
-        button.setButtonType(.toggle)
         return button
     }()
     
     let darkButton: NSButton = {
-        var tintImage = NSImage(size: NSMakeSize(66, 38))
-        tintImage = tintImage.tint(color: NSColor.red)
-        let button = NSButton(title: "Dark",image: tintImage, target: nil, action: nil)
+        var button: NSButton
+        if let darkImage = NSImage(named: "button_dark") {
+            button = NSButton(title: "Dark", image: darkImage, target: nil, action: nil)
+        } else {
+            var tintImage = NSImage(size: NSMakeSize(70, 48))
+            tintImage = tintImage.tint(color: NSColor.blue)
+            button = NSButton(title: "Dark", image: tintImage, target: nil, action: nil)
+        }
+        
+        button.isBordered = false
+        button.layer?.backgroundColor = NSColor.clear.cgColor
+        button.bezelStyle = NSButton.BezelStyle.regularSquare
+        button.imagePosition = NSControl.ImagePosition.imageAbove
         return button
     }()
     
@@ -31,6 +50,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         stackView.alignment = .centerX
         stackView.orientation = .horizontal
         stackView.distribution = .equalSpacing
+        stackView.spacing = 18
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -47,14 +67,13 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         
         self.darkButton.target = self
         self.darkButton.action = #selector(TodayViewController.darkButtonClicked)
-                
+        
         self.containerStackView.addView(lightButton, in: .center)
         self.containerStackView.addView(darkButton, in: .center)
         self.view.addSubview(self.containerStackView)
         
         self.view.translatesAutoresizingMaskIntoConstraints = false
-        self.view.widthAnchor.constraint(equalToConstant: 320).isActive = true;
-        self.view.heightAnchor.constraint(equalToConstant: 180).isActive = true;
+        self.view.heightAnchor.constraint(equalToConstant: 120).isActive = true;
         
         let margin: CGFloat = 8
         
@@ -62,22 +81,43 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         self.containerStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -margin).isActive = true;
         self.containerStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         super.updateViewConstraints()
+        
+        self.syncAppearanceType()
     }
     
+    func syncAppearanceType() {
+        let currentTheme = SLSGetAppearanceThemeLegacy()
+        switch currentTheme {
+        case .light:
+            self.lightButton.isBordered = true
+            self.darkButton.isBordered = false
+        case .dark:
+            self.lightButton.isBordered = false
+            self.darkButton.isBordered = true
+        default:
+            self.lightButton.isBordered = false
+            self.darkButton.isBordered = false
+        }
+    }
+
     // MARK: Button Action
     
     @objc func lightButtonClicked() {
         let currentTheme = SLSGetAppearanceThemeLegacy()
-        if (currentTheme != AppearanceType.light) {
+        if currentTheme != AppearanceType.light {
             SLSSetAppearanceThemeLegacy(.light)
         }
+        
+        syncAppearanceType()
     }
     
     @objc func darkButtonClicked() {
         let currentTheme = SLSGetAppearanceThemeLegacy()
-        if (currentTheme != AppearanceType.dark) {
+        if currentTheme != AppearanceType.dark {
             SLSSetAppearanceThemeLegacy(.dark)
         }
+        
+        syncAppearanceType()
     }
     
     // MARK: NotificationCenter
