@@ -13,21 +13,16 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     let lightButton:NSButton = {
         var tintImage = NSImage(size: NSMakeSize(70, 48))
         tintImage = tintImage.tint(color: NSColor.blue)
-        let button = NSButton(title: "Light", image: tintImage, target: self, action: #selector(TodayViewController.lightButtonClicked))
+        let button = NSButton(title: "Light", image: tintImage, target: nil, action: nil)
         button.imagePosition = NSControl.ImagePosition.imageAbove
         button.setButtonType(.toggle)
-//        button.state = NSControl.StateValue.off
-        
-        // Change theme
-//        SLSSetAppearanceThemeLegacy(true)
-        // NSButtonCell
         return button
     }()
     
     let darkButton: NSButton = {
         var tintImage = NSImage(size: NSMakeSize(66, 38))
         tintImage = tintImage.tint(color: NSColor.red)
-        let button = NSButton(title: "Dark",image: tintImage, target: self, action: nil)
+        let button = NSButton(title: "Dark",image: tintImage, target: nil, action: nil)
         return button
     }()
     
@@ -36,7 +31,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         stackView.alignment = .centerX
         stackView.orientation = .horizontal
         stackView.distribution = .equalSpacing
-        stackView.setBackground(color: NSColor.yellow)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -48,7 +42,11 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//          (.momentaryPushIn)
+        self.lightButton.target = self
+        self.lightButton.action = #selector(TodayViewController.lightButtonClicked)
+        
+        self.darkButton.target = self
+        self.darkButton.action = #selector(TodayViewController.darkButtonClicked)
                 
         self.containerStackView.addView(lightButton, in: .center)
         self.containerStackView.addView(darkButton, in: .center)
@@ -67,9 +65,19 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     }
     
     // MARK: Button Action
+    
     @objc func lightButtonClicked() {
-//        print(type(of: sender));
-        print("attach")
+        let currentTheme = SLSGetAppearanceThemeLegacy()
+        if (currentTheme != AppearanceType.light) {
+            SLSSetAppearanceThemeLegacy(.light)
+        }
+    }
+    
+    @objc func darkButtonClicked() {
+        let currentTheme = SLSGetAppearanceThemeLegacy()
+        if (currentTheme != AppearanceType.dark) {
+            SLSSetAppearanceThemeLegacy(.dark)
+        }
     }
     
     // MARK: NotificationCenter
