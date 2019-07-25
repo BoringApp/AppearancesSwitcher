@@ -14,7 +14,7 @@
 typedef NS_ENUM(NSInteger, AppearanceType) {
     AppearanceTypeLight = 0,
     AppearanceTypeDark = 1,
-    AppearanceTypeAuto = 3,
+//    AppearanceTypeAuto = 3,
 };
 
 /**

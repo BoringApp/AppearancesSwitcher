@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8758654922E39E810084CFED /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758654822E39E810084CFED /* ToggleView.swift */; };
 		877A566E22DCE35F00396936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A566D22DCE35F00396936 /* AppDelegate.swift */; };
 		877A567022DCE36100396936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877A566F22DCE36100396936 /* Assets.xcassets */; };
 		877A567D22DCE39100396936 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A567B22DCE39000396936 /* ViewController.swift */; };
@@ -19,6 +20,8 @@
 		87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644C22DDA710003A3282 /* NSViewExtension.swift */; };
 		87BA644F22DDC515003A3282 /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644E22DDC515003A3282 /* NSImageExtension.swift */; };
 		87BA647922DEECE9003A3282 /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BA647822DEECE9003A3282 /* SkyLight.framework */; };
+		87F5B90922E954BB009CF28D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F5B90822E954BB009CF28D /* SwitchCell.swift */; };
+		87F5B90B22E994B8009CF28D /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F5B90A22E994B8009CF28D /* ImageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8758654822E39E810084CFED /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToggleView.swift; path = ../../../../../../../System/Volumes/Data/Users/gm/PROJECT/AppearancesSwitcher/Today/Classes/Views/ToggleView.swift; sourceTree = "<group>"; };
 		877A566A22DCE35F00396936 /* AppearancesSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppearancesSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		877A566D22DCE35F00396936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		877A566F22DCE36100396936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		87BA644E22DDC515003A3282 /* NSImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtension.swift; sourceTree = "<group>"; };
 		87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
 		87BA647822DEECE9003A3282 /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
+		87F5B90822E954BB009CF28D /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		87F5B90A22E994B8009CF28D /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageButton.swift; path = ../../../../../../../System/Volumes/Data/Users/gm/PROJECT/AppearancesSwitcher/Today/Classes/Views/ImageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8758654722E39DE90084CFED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8758654822E39E810084CFED /* ToggleView.swift */,
+				87F5B90A22E994B8009CF28D /* ImageButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		877A566122DCE35F00396936 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +158,8 @@
 		8784CE0A22DF0ED0009815A5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				87F5B90722E954BB009CF28D /* Cells */,
+				8758654722E39DE90084CFED /* Views */,
 				8784CE0B22DF1DD6009815A5 /* Extensions */,
 				877A569E22DCE49C00396936 /* TodayViewController.swift */,
 			);
@@ -156,6 +173,14 @@
 				87BA644C22DDA710003A3282 /* NSViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87F5B90722E954BB009CF28D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				87F5B90822E954BB009CF28D /* SwitchCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +229,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = GMWorkStudio;
 				TargetAttributes = {
 					877A566922DCE35F00396936 = {
@@ -270,8 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				877A569F22DCE49C00396936 /* TodayViewController.swift in Sources */,
+				87F5B90B22E994B8009CF28D /* ImageButton.swift in Sources */,
 				87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */,
 				87BA644F22DDC515003A3282 /* NSImageExtension.swift in Sources */,
+				8758654922E39E810084CFED /* ToggleView.swift in Sources */,
+				87F5B90922E954BB009CF28D /* SwitchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +446,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppearancesSwitcher/AppearancesSwitcher.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 53QLTPPT52;
@@ -444,6 +473,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppearancesSwitcher/AppearancesSwitcher.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 53QLTPPT52;
@@ -468,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 53QLTPPT52;
@@ -494,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 53QLTPPT52;

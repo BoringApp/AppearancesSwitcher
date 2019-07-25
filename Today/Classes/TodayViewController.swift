@@ -10,38 +10,30 @@ import Cocoa
 import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
-    let lightButton:NSButton = {
-        var button: NSButton
-        if let lightImage = NSImage(named: "button_light") {
-            button = NSButton(title: "Light", image: lightImage, target: nil, action: nil)
-        } else {
-            var tintImage = NSImage(size: NSMakeSize(70, 48))
-            tintImage = tintImage.tint(color: NSColor.blue)
-            button = NSButton(title: "Light", image: tintImage, target: nil, action: nil)
-        }
+    let lightView:ToggleView = {
         
-        button.isBordered = false
-        button.layer?.backgroundColor = NSColor.clear.cgColor
-        //        button.layer?.cornerRadius = radius
-        button.bezelStyle = NSButton.BezelStyle.regularSquare
-        button.imagePosition = NSControl.ImagePosition.imageAbove
+        // button size : 67 * 44
+        
+        var button: ToggleView
+        if let lightImage = NSImage(named: "AppearanceLight_Normal") {
+            button = ToggleView(title: "Light", image: lightImage, target: nil, action: nil)
+        } else {
+            var tintImage = NSImage(size: NSMakeSize(67, 44))
+            tintImage = tintImage.tint(color: NSColor.blue)
+            button = ToggleView(title: "Light", image: tintImage, target: nil, action: nil)            
+        }
         return button
     }()
     
-    let darkButton: NSButton = {
-        var button: NSButton
-        if let darkImage = NSImage(named: "button_dark") {
-            button = NSButton(title: "Dark", image: darkImage, target: nil, action: nil)
+    let darkView: ToggleView = {
+        var button: ToggleView
+        if let darkImage = NSImage(named: "AppearanceDark_Normal") {
+            button = ToggleView(title: "Dark", image: darkImage, target: nil, action: nil)
         } else {
-            var tintImage = NSImage(size: NSMakeSize(70, 48))
+            var tintImage = NSImage(size: NSMakeSize(67, 44))
             tintImage = tintImage.tint(color: NSColor.blue)
-            button = NSButton(title: "Dark", image: tintImage, target: nil, action: nil)
+            button = ToggleView(title: "Dark", image: tintImage, target: nil, action: nil)
         }
-        
-        button.isBordered = false
-        button.layer?.backgroundColor = NSColor.clear.cgColor
-        button.bezelStyle = NSButton.BezelStyle.regularSquare
-        button.imagePosition = NSControl.ImagePosition.imageAbove
         return button
     }()
     
@@ -62,24 +54,25 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.lightButton.target = self
-        self.lightButton.action = #selector(TodayViewController.lightButtonClicked)
-        
-        self.darkButton.target = self
-        self.darkButton.action = #selector(TodayViewController.darkButtonClicked)
-        
-        self.containerStackView.addView(lightButton, in: .center)
-        self.containerStackView.addView(darkButton, in: .center)
-        self.view.addSubview(self.containerStackView)
-        
         self.view.translatesAutoresizingMaskIntoConstraints = false
-        self.view.heightAnchor.constraint(equalToConstant: 120).isActive = true;
+        self.view.heightAnchor.constraint(equalToConstant: 90).isActive = true;
+        
+        self.lightView.imageButton.target = self
+        self.lightView.imageButton.action = #selector(TodayViewController.lightButtonClicked)
+        
+        self.darkView.imageButton.target = self
+        self.darkView.imageButton.action = #selector(TodayViewController.darkButtonClicked)
+        
+        self.containerStackView.addView(lightView, in: .center)
+        self.containerStackView.addView(darkView, in: .center)
+        self.view.addSubview(self.containerStackView)
         
         let margin: CGFloat = 8
         
         self.containerStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: margin).isActive = true
         self.containerStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -margin).isActive = true;
         self.containerStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+       
         super.updateViewConstraints()
         
         self.syncAppearanceType()
@@ -89,35 +82,43 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         let currentTheme = SLSGetAppearanceThemeLegacy()
         switch currentTheme {
         case .light:
-            self.lightButton.isBordered = true
-            self.darkButton.isBordered = false
+            self.lightView.imageButton.isSelected = true
+            self.darkView.imageButton.isSelected = false
         case .dark:
-            self.lightButton.isBordered = false
-            self.darkButton.isBordered = true
+            self.lightView.imageButton.isSelected = false
+            self.darkView.imageButton.isSelected = true
         default:
-            self.lightButton.isBordered = false
-            self.darkButton.isBordered = false
+            self.lightView.imageButton.isSelected = false
+            self.darkView.imageButton.isSelected = false
         }
     }
 
     // MARK: Button Action
     
     @objc func lightButtonClicked() {
+#if DEBUG
+        self.lightView.imageButton.isSelected = true
+        self.darkView.imageButton.isSelected = false
+#else
         let currentTheme = SLSGetAppearanceThemeLegacy()
         if currentTheme != AppearanceType.light {
             SLSSetAppearanceThemeLegacy(.light)
         }
-        
         syncAppearanceType()
+#endif
     }
     
     @objc func darkButtonClicked() {
+#if DEBUG
+        self.lightView.imageButton.isSelected = false
+        self.darkView.imageButton.isSelected = true
+#else
         let currentTheme = SLSGetAppearanceThemeLegacy()
         if currentTheme != AppearanceType.dark {
             SLSSetAppearanceThemeLegacy(.dark)
         }
-        
         syncAppearanceType()
+#endif
     }
     
     // MARK: NotificationCenter
