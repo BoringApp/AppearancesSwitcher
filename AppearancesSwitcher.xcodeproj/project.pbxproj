@@ -18,7 +18,6 @@
 		877A56AA22DCE49C00396936 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 877A569922DCE49C00396936 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8784CE0922DF0ECA009815A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8784CE0822DF0ECA009815A5 /* Assets.xcassets */; };
 		87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644C22DDA710003A3282 /* NSViewExtension.swift */; };
-		87BA644F22DDC515003A3282 /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644E22DDC515003A3282 /* NSImageExtension.swift */; };
 		87BA647922DEECE9003A3282 /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BA647822DEECE9003A3282 /* SkyLight.framework */; };
 		87F5B90922E954BB009CF28D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F5B90822E954BB009CF28D /* SwitchCell.swift */; };
 		87F5B90B22E994B8009CF28D /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F5B90A22E994B8009CF28D /* ImageButton.swift */; };
@@ -65,7 +64,6 @@
 		877A56A722DCE49C00396936 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Today.entitlements; sourceTree = "<group>"; };
 		8784CE0822DF0ECA009815A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87BA644C22DDA710003A3282 /* NSViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewExtension.swift; sourceTree = "<group>"; };
-		87BA644E22DDC515003A3282 /* NSImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtension.swift; sourceTree = "<group>"; };
 		87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
 		87BA647822DEECE9003A3282 /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
 		87F5B90822E954BB009CF28D /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		8784CE0B22DF1DD6009815A5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				87BA644E22DDC515003A3282 /* NSImageExtension.swift */,
 				87BA644C22DDA710003A3282 /* NSViewExtension.swift */,
 			);
 			path = Extensions;
@@ -297,7 +294,6 @@
 				877A569F22DCE49C00396936 /* TodayViewController.swift in Sources */,
 				87F5B90B22E994B8009CF28D /* ImageButton.swift in Sources */,
 				87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */,
-				87BA644F22DDC515003A3282 /* NSImageExtension.swift in Sources */,
 				8758654922E39E810084CFED /* ToggleView.swift in Sources */,
 				87F5B90922E954BB009CF28D /* SwitchCell.swift in Sources */,
 			);

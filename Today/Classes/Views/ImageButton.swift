@@ -34,10 +34,9 @@ class ImageButton:NSButton {
         self.imagePosition = .imageOnly
         self.layer?.cornerRadius = 7
         self.layer?.masksToBounds = true
-        self.layer?.borderColor = NSColor(calibratedRed: 47 / 255.0, green: 122 / 255.0, blue: 1, alpha: 1).cgColor
+        self.layer?.borderColor = NSColor.controlAccentColor.cgColor
         (self.cell as? NSButtonCell)?.highlightsBy = .contentsCellMask
         self.translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
     required init?(coder: NSCoder) {

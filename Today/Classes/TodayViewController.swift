@@ -11,30 +11,13 @@ import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
     let lightView:ToggleView = {
-        
-        // button size : 67 * 44
-        
-        var button: ToggleView
-        if let lightImage = NSImage(named: "AppearanceLight_Normal") {
-            button = ToggleView(title: "Light", image: lightImage, target: nil, action: nil)
-        } else {
-            var tintImage = NSImage(size: NSMakeSize(67, 44))
-            tintImage = tintImage.tint(color: NSColor.blue)
-            button = ToggleView(title: "Light", image: tintImage, target: nil, action: nil)            
-        }
-        return button
+        var lightImage = TodayViewController.combinImage(origin: NSImage(named: "AppearanceLight_Normal")!, mask: NSImage(named: "selectionColor_mask_Normal")!)
+        return ToggleView(title: "Light", image: lightImage, target: nil, action: nil)
     }()
     
     let darkView: ToggleView = {
-        var button: ToggleView
-        if let darkImage = NSImage(named: "AppearanceDark_Normal") {
-            button = ToggleView(title: "Dark", image: darkImage, target: nil, action: nil)
-        } else {
-            var tintImage = NSImage(size: NSMakeSize(67, 44))
-            tintImage = tintImage.tint(color: NSColor.blue)
-            button = ToggleView(title: "Dark", image: tintImage, target: nil, action: nil)
-        }
-        return button
+        var darkImage = TodayViewController.combinImage(origin: NSImage(named: "AppearanceDark_Normal")!, mask: NSImage(named: "selectionColor_mask_Normal")!)
+        return ToggleView(title: "Dark", image: darkImage, target: nil, action: nil)
     }()
     
     let containerStackView: NSStackView = {
@@ -72,7 +55,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         self.containerStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: margin).isActive = true
         self.containerStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -margin).isActive = true;
         self.containerStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-       
         super.updateViewConstraints()
         
         self.syncAppearanceType()
@@ -91,6 +73,20 @@ class TodayViewController: NSViewController, NCWidgetProviding {
             self.lightView.imageButton.isSelected = false
             self.darkView.imageButton.isSelected = false
         }
+    }
+    
+    class func combinImage(origin:NSImage, mask:NSImage) -> NSImage {
+        let accentColor = NSColor.controlAccentColor
+        let image = NSImage.init(size: origin.size, flipped: false) { (frameRect) -> Bool in
+            origin.draw(in: frameRect)
+            mask.lockFocus()
+            accentColor.set()
+            frameRect.fill(using: .sourceAtop)
+            mask.unlockFocus()
+            mask.draw(in: frameRect)
+            return true
+        }
+        return image
     }
 
     // MARK: Button Action
@@ -131,3 +127,5 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         return NSEdgeInsetsZero
     }
 }
+
+// TODO: switch button border color,chaned method

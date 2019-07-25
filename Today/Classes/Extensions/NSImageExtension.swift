@@ -9,12 +9,12 @@
 import Cocoa
 
 extension NSImage {
-    func tint(color: NSColor) -> NSImage {
-        let image = self.copy() as! NSImage
-        image.lockFocus()
-        let imageRect = NSRect(origin: NSZeroPoint, size: image.size)
-        color.drawSwatch(in: imageRect)
-        image.unlockFocus()
-        return image
-    }
+//    func tint(color: NSColor) -> NSImage {
+//        let image = self.copy() as! NSImage
+//        image.lockFocus()
+//        let imageRect = NSRect(origin: NSZeroPoint, size: image.size)
+//        color.drawSwatch(in: imageRect)
+//        image.unlockFocus()
+//        return image
+//    }
 }
