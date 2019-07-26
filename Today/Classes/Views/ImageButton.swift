@@ -42,4 +42,13 @@ class ImageButton:NSButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    override func viewDidChangeEffectiveAppearance() {
+        super.viewDidChangeEffectiveAppearance()
+        
+        // layout() or viewDidChangeEffectiveAppearance()
+        // https://developer.apple.com/documentation/appkit/supporting_dark_mode_in_your_interface
+        self.layer?.borderColor = NSColor.controlAccentColor.cgColor
+    }
+
 }

@@ -40,9 +40,9 @@ void SLSSetAppearanceThemeLegacy(AppearanceType);
 AppearanceType SLSGetAppearanceThemeLegacy();
 
 /*
- 2019-07-25 17:12:13.827779+0800 Today[62073:2637983] [User Defaults] Couldn't write values for keys (
- AppleInterfaceStyleSwitchesAutomatically
- ) in CFPrefsPlistSource<0x600002ef0880> (Domain: kCFPreferencesAnyApplication, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No): setting preferences outside an application's container requires user-preference-write or file-write-data sandbox access
+ Need outside sandbox access entitlement: 'user-preference-write' or 'file-write-data'.
+ Write 'AppleInterfaceStyleSwitchesAutomatically' in CFPrefsPlistSource.
+ (Domain: kCFPreferencesAnyApplication, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No)
  */
 NSInteger SLSSetAppearanceThemeSwitchesAutomatically(NSInteger a1);
 

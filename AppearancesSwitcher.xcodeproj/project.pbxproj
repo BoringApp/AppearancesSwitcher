@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8758654922E39E810084CFED /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758654822E39E810084CFED /* ToggleView.swift */; };
+		875B310C22EAA8170000F291 /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875B310B22EAA8160000F291 /* NSImageExtension.swift */; };
 		877A566E22DCE35F00396936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A566D22DCE35F00396936 /* AppDelegate.swift */; };
 		877A567022DCE36100396936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877A566F22DCE36100396936 /* Assets.xcassets */; };
 		877A567D22DCE39100396936 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A567B22DCE39000396936 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		8758654822E39E810084CFED /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToggleView.swift; path = ../../../../../../../System/Volumes/Data/Users/gm/PROJECT/AppearancesSwitcher/Today/Classes/Views/ToggleView.swift; sourceTree = "<group>"; };
+		875B310B22EAA8160000F291 /* NSImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageExtension.swift; sourceTree = "<group>"; };
 		877A566A22DCE35F00396936 /* AppearancesSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppearancesSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		877A566D22DCE35F00396936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		877A566F22DCE36100396936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		8784CE0B22DF1DD6009815A5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				875B310B22EAA8160000F291 /* NSImageExtension.swift */,
 				87BA644C22DDA710003A3282 /* NSViewExtension.swift */,
 			);
 			path = Extensions;
@@ -293,6 +296,7 @@
 			files = (
 				877A569F22DCE49C00396936 /* TodayViewController.swift in Sources */,
 				87F5B90B22E994B8009CF28D /* ImageButton.swift in Sources */,
+				875B310C22EAA8170000F291 /* NSImageExtension.swift in Sources */,
 				87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */,
 				8758654922E39E810084CFED /* ToggleView.swift in Sources */,
 				87F5B90922E954BB009CF28D /* SwitchCell.swift in Sources */,

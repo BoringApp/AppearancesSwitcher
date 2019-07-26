@@ -10,13 +10,19 @@ import Cocoa
 import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
+    
+    // MARK: - Properties
+    
     let lightView:ToggleView = {
-        var lightImage = TodayViewController.combinImage(origin: NSImage(named: "AppearanceLight_Normal")!, mask: NSImage(named: "selectionColor_mask_Normal")!)
+        
+        // TODO: Use 'NSColor.currentControlTint' to set correct origin image.
+        
+        let lightImage = NSImage.combinImage(origin: NSImage(named: "AppearanceLight_Normal")!, mask: NSImage(named: "selectionColor_mask_Normal")!)
         return ToggleView(title: "Light", image: lightImage, target: nil, action: nil)
     }()
     
     let darkView: ToggleView = {
-        var darkImage = TodayViewController.combinImage(origin: NSImage(named: "AppearanceDark_Normal")!, mask: NSImage(named: "selectionColor_mask_Normal")!)
+        let darkImage = NSImage.combinImage(origin: NSImage(named: "AppearanceDark_Normal")!, mask: NSImage(named: "selectionColor_mask_Normal")!)
         return ToggleView(title: "Dark", image: darkImage, target: nil, action: nil)
     }()
     
@@ -29,6 +35,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    // MARK: - Life cycle
     
     override func loadView() {
         self.view = NSView()
@@ -55,10 +63,14 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         self.containerStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: margin).isActive = true
         self.containerStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -margin).isActive = true;
         self.containerStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        super.updateViewConstraints()
-        
+    }
+    
+    override func viewDidLayout() {
+        super.viewDidLayout()
         self.syncAppearanceType()
     }
+    
+    // MARK: - Internal methods
     
     func syncAppearanceType() {
         let currentTheme = SLSGetAppearanceThemeLegacy()
@@ -73,20 +85,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
             self.lightView.imageButton.isSelected = false
             self.darkView.imageButton.isSelected = false
         }
-    }
-    
-    class func combinImage(origin:NSImage, mask:NSImage) -> NSImage {
-        let accentColor = NSColor.controlAccentColor
-        let image = NSImage.init(size: origin.size, flipped: false) { (frameRect) -> Bool in
-            origin.draw(in: frameRect)
-            mask.lockFocus()
-            accentColor.set()
-            frameRect.fill(using: .sourceAtop)
-            mask.unlockFocus()
-            mask.draw(in: frameRect)
-            return true
-        }
-        return image
     }
 
     // MARK: Button Action
@@ -117,7 +115,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 #endif
     }
     
-    // MARK: NotificationCenter
+    // MARK: - NotificationCenter
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         completionHandler(.noData)
@@ -128,4 +126,4 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     }
 }
 
-// TODO: switch button border color,chaned method
+// FIXME: TodayViewController's appearance not change when user change the appearance by system.
