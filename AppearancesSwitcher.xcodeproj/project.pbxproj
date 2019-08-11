@@ -17,11 +17,11 @@
 		877A569F22DCE49C00396936 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A569E22DCE49C00396936 /* TodayViewController.swift */; };
 		877A56A622DCE49C00396936 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 877A56A422DCE49C00396936 /* InfoPlist.strings */; };
 		877A56AA22DCE49C00396936 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 877A569922DCE49C00396936 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8784CE0922DF0ECA009815A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8784CE0822DF0ECA009815A5 /* Assets.xcassets */; };
 		87BA644D22DDA710003A3282 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA644C22DDA710003A3282 /* NSViewExtension.swift */; };
 		87BA647922DEECE9003A3282 /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BA647822DEECE9003A3282 /* SkyLight.framework */; };
 		87F5B90922E954BB009CF28D /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F5B90822E954BB009CF28D /* SwitchCell.swift */; };
 		87F5B90B22E994B8009CF28D /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F5B90A22E994B8009CF28D /* ImageButton.swift */; };
+		87FA857B22EEEA1900646BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87FA857A22EEEA1800646BD1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +64,12 @@
 		877A56A322DCE49C00396936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		877A56A522DCE49C00396936 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		877A56A722DCE49C00396936 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Today.entitlements; sourceTree = "<group>"; };
-		8784CE0822DF0ECA009815A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87BA644C22DDA710003A3282 /* NSViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewExtension.swift; sourceTree = "<group>"; };
 		87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Today-Bridging-Header.h"; sourceTree = "<group>"; };
 		87BA647822DEECE9003A3282 /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
 		87F5B90822E954BB009CF28D /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		87F5B90A22E994B8009CF28D /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageButton.swift; path = ../../../../../../../System/Volumes/Data/Users/gm/PROJECT/AppearancesSwitcher/Today/Classes/Views/ImageButton.swift; sourceTree = "<group>"; };
+		87FA857A22EEEA1800646BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,12 +145,12 @@
 		877A569D22DCE49C00396936 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				87FA857A22EEEA1800646BD1 /* Assets.xcassets */,
 				8784CE0A22DF0ED0009815A5 /* Classes */,
 				877A56A322DCE49C00396936 /* Info.plist */,
 				877A56A422DCE49C00396936 /* InfoPlist.strings */,
 				87BA645222DDD9E1003A3282 /* Today-Bridging-Header.h */,
 				877A56A722DCE49C00396936 /* Today.entitlements */,
-				8784CE0822DF0ECA009815A5 /* Assets.xcassets */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8784CE0922DF0ECA009815A5 /* Assets.xcassets in Resources */,
+				87FA857B22EEEA1900646BD1 /* Assets.xcassets in Resources */,
 				877A56A622DCE49C00396936 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -449,13 +449,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 53QLTPPT52;
+				DEVELOPMENT_TEAM = 2JHKJE6G5B;
 				INFOPLIST_FILE = AppearancesSwitcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -476,13 +477,14 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 53QLTPPT52;
+				DEVELOPMENT_TEAM = 2JHKJE6G5B;
 				INFOPLIST_FILE = AppearancesSwitcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -497,11 +499,12 @@
 		877A56AC22DCE49C00396936 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 53QLTPPT52;
+				DEVELOPMENT_TEAM = 2JHKJE6G5B;
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,6 +512,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -524,11 +528,12 @@
 		877A56AD22DCE49C00396936 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 53QLTPPT52;
+				DEVELOPMENT_TEAM = 2JHKJE6G5B;
 				INFOPLIST_FILE = Today/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -536,6 +541,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.corehell.appearancesswitcher.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
