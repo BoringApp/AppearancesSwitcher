@@ -86,33 +86,33 @@ class TodayViewController: NSViewController, NCWidgetProviding {
             self.darkView.imageButton.isSelected = false
         }
     }
-
+    
     // MARK: Button Action
     
     @objc func lightButtonClicked() {
-#if DEBUG
-        self.lightView.imageButton.isSelected = true
-        self.darkView.imageButton.isSelected = false
-#else
+        //#if DEBUG
+        //        self.lightView.imageButton.isSelected = true
+        //        self.darkView.imageButton.isSelected = false
+        //#else
         let currentTheme = SLSGetAppearanceThemeLegacy()
         if currentTheme != AppearanceType.light {
             SLSSetAppearanceThemeLegacy(.light)
         }
         syncAppearanceType()
-#endif
+        //#endif
     }
     
     @objc func darkButtonClicked() {
-#if DEBUG
-        self.lightView.imageButton.isSelected = false
-        self.darkView.imageButton.isSelected = true
-#else
+        //#if DEBUG
+        //        self.lightView.imageButton.isSelected = false
+        //        self.darkView.imageButton.isSelected = true
+        //#else
         let currentTheme = SLSGetAppearanceThemeLegacy()
         if currentTheme != AppearanceType.dark {
             SLSSetAppearanceThemeLegacy(.dark)
         }
         syncAppearanceType()
-#endif
+        //#endif
     }
     
     // MARK: - NotificationCenter

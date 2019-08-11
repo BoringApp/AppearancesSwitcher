@@ -21,7 +21,6 @@ class ViewController: NSViewController {
         return field
     }()
     
-    
     override func loadView() {
         
         let view = NSView.init(frame: NSMakeRect(0, 0, 320, 300))
